@@ -24,6 +24,13 @@ if os.path.exists('data\\derived_data\\negative_examples') and os.path.isdir('da
     shutil.rmtree('data\\derived_data\\negative_examples')
 
 # Create folder structure:
+try:
+    os.mkdir('data\\derived_data')
+    os.mkdir('data\\derived_data\\tiles')
+    os.mkdir('data\\derived_data\\confirmed_sites')
+    os.mkdir('data\\derived_data\\negative_examples')
+except OSError:
+    pass
 # Get data
 tell_sites = gpd.read_file("data\\raw_data\\tell_sites.geojson").to_crs('epsg:32637')
 
