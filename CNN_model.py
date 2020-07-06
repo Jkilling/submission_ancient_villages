@@ -256,5 +256,3 @@ image = load('data\\derived_data\\tiles\\tile_26.tif')
 image = np.delete(image,0,3)
 print(image.shape)
 model.predict(image)
-
-path=
